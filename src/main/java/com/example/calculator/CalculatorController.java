@@ -1,11 +1,11 @@
-package com.example.calculator.controller;
+package com.example.calculator;
 
-import com.example.calculator.service.CalculatorService;
+import com.example.calculator.CalculatorService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/calculator")
 public class CalculatorController {
 
     private final CalculatorService calculatorService;

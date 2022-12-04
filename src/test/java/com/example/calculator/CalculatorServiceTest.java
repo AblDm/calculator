@@ -1,13 +1,13 @@
 package com.example.calculator;
 
-import com.example.calculator.service.CalculatorService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorServiceTest {
 
@@ -16,30 +16,30 @@ public class CalculatorServiceTest {
     @ParameterizedTest
     @MethodSource ("plusTestSuites")
     public void plusTest (int num1,int num2 ,int result){
-        Assertions.assertEquals (result, calculatorService.plus (num1, num2));
+        assertEquals (result, calculatorService.plus (num1, num2));
     }
 
     @ParameterizedTest
     @MethodSource ("minusTestSuites")
     public void minusTest (int num1,int num2 ,int result){
-        Assertions.assertEquals (result, calculatorService.minus (num1, num2));
+        assertEquals (result, calculatorService.minus (num1, num2));
     }
 
     @ParameterizedTest
     @MethodSource ("multipleTestSuites")
     public void multipleTest (int num1,int num2 ,int result){
-        Assertions.assertEquals (result, calculatorService.multiple (num1, num2));
+        assertEquals (result, calculatorService.multiple (num1, num2));
     }
 
     @ParameterizedTest
     @MethodSource ("divideTestSuites")
     public void divideTest (int num1,int num2 ,int result){
-        Assertions.assertEquals (result, calculatorService.divide (num1, num2));
+        assertEquals (result, calculatorService.divide (num1, num2));
     }
 
     @Test
     public void divideByZeroThrowExceptions () {
-        Assertions.assertThrows (IllegalArgumentException.class, () ->{
+        assertThrows (IllegalArgumentException.class, () ->{
             calculatorService.divide (1,0);
         });
     }
@@ -58,7 +58,7 @@ public class CalculatorServiceTest {
                 Arguments.of (8,6,2),
                 Arguments.of (9,9,0),
                 Arguments.of (-6,6,-12),
-                Arguments.of (3,11,8)
+                Arguments.of (3,11,-8)
         );
     }
 
