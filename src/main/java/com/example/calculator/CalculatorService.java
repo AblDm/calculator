@@ -7,7 +7,7 @@ public class CalculatorService {
 
 
     public Integer checker (Integer num) {
-        if ( num == null) {
+        if (num == null) {
             throw new IllegalNumberException ("Необходимо ввести оба аргумента для работы калькулятора");
         }return num;
     }
