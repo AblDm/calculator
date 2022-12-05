@@ -38,6 +38,14 @@ public class CalculatorServiceTest {
     }
 
     @Test
+    public void checkerThrowExceptions () {
+        assertThrows (IllegalArgumentException.class, () ->{
+            calculatorService.checker (null);
+        });
+    }
+
+
+    @Test
     public void divideByZeroThrowExceptions () {
         assertThrows (IllegalArgumentException.class, () ->{
             calculatorService.divide (1,0);
@@ -52,6 +60,7 @@ public class CalculatorServiceTest {
                 Arguments.of (3,11,14)
         );
     }
+
 
   public static List <Arguments> minusTestSuites() {
         return List.of (
