@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
-int num1;
-int num2;
+
 
     public Integer checker (Integer num) {
         if ( num == null) {
